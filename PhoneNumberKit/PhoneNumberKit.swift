@@ -24,6 +24,11 @@ public final class PhoneNumberKit: NSObject {
         self.parseManager = ParseManager(metadataManager: metadataManager, regexManager: regexManager)
     }
 
+    
+    public func normalizePhoneNumber(_ number: String) -> String {
+        return parseManager.parser.normalizePhoneNumber(number)
+    }
+
     // MARK: Parsing
     
     /// Parses a number string, used to create PhoneNumber objects. Throws.
